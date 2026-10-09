@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+  Adds an "Artifacts" tab to the experimental new build page (JENKINS issue #26490).
+</div>
