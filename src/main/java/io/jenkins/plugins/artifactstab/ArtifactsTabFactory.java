@@ -22,6 +22,13 @@ public class ArtifactsTabFactory extends TransientActionFactory<Run> {
         return Run.class;
     }
 
+    // Without this the default of Action.class makes Jenkins consult this factory for every
+    // getAction(SomeAction.class) on any build, e.g. once per test case in JUnit's getPreviousResult().
+    @Override
+    public Class<ArtifactsTab> actionType() {
+        return ArtifactsTab.class;
+    }
+
     @NonNull
     @Override
     public Collection<? extends Tab> createFor(@NonNull Run target) {
