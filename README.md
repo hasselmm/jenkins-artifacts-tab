@@ -38,6 +38,9 @@ The classic build page is not affected.
 - No badge with the number of artifacts, to avoid listing artifacts on every
   page render (expensive with remote artifact managers such as S3).
 - Anonymous users never see the tab, since experiments are per user.
+- Whether a finished build has artifacts is cached while the build stays
+  loaded. If a build discarder later deletes its artifacts, the tab may
+  still be shown and lead to an empty artifact browser.
 
 ## Requirements
 
